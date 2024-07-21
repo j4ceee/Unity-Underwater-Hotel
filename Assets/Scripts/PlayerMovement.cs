@@ -2,88 +2,117 @@
 using UnityEngine.InputSystem;
 #endif
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
 
     public CharacterController controller;
+    public GameObject player;
 
-    public float speed = 12f;
+    public float speed = 4f;
+    private float _speedStart;
     public float gravity = -10f;
-    public float jumpHeight = 2f;
+    public float jumpHeight = 0.6f;
+    private float _jumpHeightStart;
+
+    [Tooltip("Time in seconds before the player can jump again")]
+    public float jumpCooldown = .2f;
+    private float _lastJumpTime = -1f; // time when the player last jumped
 
     public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
-    
+    public Transform roofCheck;
+    public float groundDistance = 0.25f;
+    //public LayerMask groundMask;
 
-    Vector3 velocity;
-    bool isGrounded;
+    public InputActionAsset playerActions;
 
-#if ENABLE_INPUT_SYSTEM
-    InputAction movement;
-    InputAction jump;
+    private Vector3 _velocity;
+    private bool _isGrounded;
+    private bool _isCrouching = false;
 
-    void Start()
+    private InputAction _movement;
+    private InputAction _jump;
+    private InputAction _crouch;
+
+    private void Start()
     {
-        movement = new InputAction("PlayerMovement", binding: "<Gamepad>/leftStick");
-        movement.AddCompositeBinding("Dpad")
-            .With("Up", "<Keyboard>/w")
-            .With("Up", "<Keyboard>/upArrow")
-            .With("Down", "<Keyboard>/s")
-            .With("Down", "<Keyboard>/downArrow")
-            .With("Left", "<Keyboard>/a")
-            .With("Left", "<Keyboard>/leftArrow")
-            .With("Right", "<Keyboard>/d")
-            .With("Right", "<Keyboard>/rightArrow");
-        
-        jump = new InputAction("PlayerJump", binding: "<Gamepad>/a");
-        jump.AddBinding("<Keyboard>/space");
+        // Get the Action Map
+        var playerControls = playerActions.FindActionMap("PlayerControls");
 
-        movement.Enable();
-        jump.Enable();
+        // Get the actions
+        _movement = playerControls.FindAction("Movement");
+        _jump = playerControls.FindAction("Jump");
+        _crouch = playerControls.FindAction("Crouch");
+
+        // Enable the actions
+        PauseMovement(false);
+
+        _jumpHeightStart = jumpHeight;
+        _speedStart = speed;
     }
-#endif
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         float x;
         float z;
-        bool jumpPressed = false;
 
-#if ENABLE_INPUT_SYSTEM
-        var delta = movement.ReadValue<Vector2>();
+        var delta = _movement.ReadValue<Vector2>();
         x = delta.x;
         z = delta.y;
-        jumpPressed = Mathf.Approximately(jump.ReadValue<float>(), 1);
-#else
-        x = Input.GetAxis("Horizontal");
-        z = Input.GetAxis("Vertical");
-        jumpPressed = Input.GetButtonDown("Jump");
-#endif
 
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        _isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance);
 
-        if (isGrounded && velocity.y < 0)
+        if (_isGrounded && _velocity.y < 0)
         {
-            velocity.y = -2f;
+            _velocity.y = -2f;
         }
 
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * (speed * Time.deltaTime));
 
-        if(jumpPressed && isGrounded)
+        if(_jump.triggered && _isGrounded && Time.time >= _lastJumpTime + jumpCooldown)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            _lastJumpTime = Time.time; // update the last jump time
         }
 
-        velocity.y += gravity * Time.deltaTime;
+        // check if the player is hitting an obstacle above
+        if (_velocity.y > 0 && Physics.CheckSphere(roofCheck.position, groundDistance))
+        {
+            _velocity.y = 0;
+        }
 
-        controller.Move(velocity * Time.deltaTime);
+        _velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(_velocity * Time.deltaTime);
+
+        // Crouch logic
+        if (_crouch.triggered)
+        {
+            _isCrouching = !_isCrouching;
+            player.transform.localScale = _isCrouching ? new Vector3(1, 0.5f, 1) : new Vector3(1, 1, 1);
+
+            jumpHeight = _isCrouching ? (.5f*_jumpHeightStart) : _jumpHeightStart;
+            speed = _isCrouching ? (.5f*_speedStart) : _speedStart;
+        }
+    }
+
+    public void PauseMovement(bool pause)
+    {
+        if (pause)
+        {
+            _movement.Disable();
+            _jump.Disable();
+            _crouch.Disable();
+        }
+        else
+        {
+            _movement.Enable();
+            _jump.Enable();
+            _crouch.Enable();
+        }
     }
 }
