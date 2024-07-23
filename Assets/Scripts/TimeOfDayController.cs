@@ -59,9 +59,9 @@ namespace Scripts
 
             //UpdateTimeLabel(progress);
 
-            oceanController.UpdateCausticsStrength(progress, paddingLow, paddingHigh);
+            oceanController.CausticsStrengthOverDay(progress, paddingLow, paddingHigh);
 
-            oceanController.UpdateOceanFogDensity(progress, paddingLow);
+            oceanController.OceanFogDensityOverDay(progress, paddingLow);
         }
 
         /*

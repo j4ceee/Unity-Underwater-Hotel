@@ -2,8 +2,6 @@
 using UnityEngine.InputSystem;
 #endif
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
@@ -15,21 +13,28 @@ public class PlayerLook : MonoBehaviour
 
     public InputActionAsset playerActions;
 
-    private float _xRotation = 0f;
+    private float _xRotation;
+
+    private Camera _camera;
 
     private InputAction _look;
+    private InputAction _zoom;
 
     // Start is called before the first frame update
     private void Start()
     {
-        // Get the Action Map
+        // get the camera component
+        _camera = GetComponent<Camera>();
+
+        // get the Action Map
         var playerControls = playerActions.FindActionMap("PlayerControls");
 
-        // Get the actions
+        // get the actions
         _look = playerControls.FindAction("Look");
+        _zoom = playerControls.FindAction("Zoom");
 
-        // Enable the actions
-        _look.Enable();
+        // enable the actions
+        PauseLook(false);
     }
 
 // Update is called once per frame
@@ -58,6 +63,11 @@ public class PlayerLook : MonoBehaviour
         transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
 
         playerBody.Rotate(Vector3.up * mouseX);
+
+        if (_zoom.triggered)
+        {
+            _camera.fieldOfView = Mathf.Approximately(_camera.fieldOfView, 60) ? 40 : 60;
+        }
     }
 
     public void PauseLook(bool pause)
@@ -65,10 +75,12 @@ public class PlayerLook : MonoBehaviour
         if (pause)
         {
             _look.Disable();
+            _zoom.Disable();
         }
         else
         {
             _look.Enable();
+            _zoom.Enable();
         }
     }
 }

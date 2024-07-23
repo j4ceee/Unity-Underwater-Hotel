@@ -109,7 +109,7 @@ Material:
     - _FoamSmoothness: 0.7
     - _MinReflectionDirectionY: 0
     - _NormalsScale: 40
-    - _NormalsStrength: 0.18
+    - _NormalsStrength: 0.225
     - _NormalsStrengthOverall: 1
     - _ObsoleteMessage: 0
     - _Occlusion: 1
@@ -126,7 +126,7 @@ Material:
     - _SSSIntensitySun: 1.3
     - _SSSSunFalloff: 5.55
     - _ScatterColourShallowDepthFalloff: 2.57
-    - _ScatterColourShallowDepthMax: 7
+    - _ScatterColourShallowDepthMax: 13.2
     - _Smoothness: 1
     - _SmoothnessFalloff: 0.5
     - _SmoothnessFar: 0.556
@@ -163,7 +163,7 @@ Material:
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _FoamBubbleColor: {r: 0.6392157, g: 0.8313726, b: 0.8196079, a: 0}
     - _SSSTint: {r: 0.007843138, g: 0.36078432, b: 0.65882355, a: 0}
-    - _ScatterColourBase: {r: 0.061290003, g: 0.24544586, b: 0.27, a: 0}
+    - _ScatterColourBase: {r: 0.0627451, g: 0.24705884, b: 0.27058825, a: 0}
     - _ScatterColourShadow: {r: 0.007843138, g: 0.36078432, b: 0.65882355, a: 0}
     - _ScatterColourShallow: {r: 0.007843138, g: 0.36078432, b: 0.65882355, a: 0}
     - _Specular: {r: 0, g: 0, b: 0, a: 0}
