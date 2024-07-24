@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         x = delta.x;
         z = delta.y;
 
-        _isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance);
+        _isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, LayerMask.GetMask("Default"));
 
         if (_isGrounded && _velocity.y < 0)
         {
@@ -80,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // check if the player is hitting an obstacle above
-        if (_velocity.y > 0 && Physics.CheckSphere(roofCheck.position, groundDistance))
+        if (_velocity.y > 0 && Physics.CheckSphere(roofCheck.position, groundDistance, LayerMask.GetMask("Default")))
         {
             _velocity.y = 0;
         }

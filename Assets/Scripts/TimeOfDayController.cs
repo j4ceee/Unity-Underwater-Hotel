@@ -15,6 +15,8 @@ namespace Scripts
         [Tooltip("Ocean controller")]
         public WaterController oceanController;
 
+        public InteriorLightController interiorLightController;
+
         public const float SunHigh = .5f;
         public const float MoonHighStart = 0f;
         public const float MoonHighEnd = 1f;
@@ -56,6 +58,8 @@ namespace Scripts
             {
                 SwitchToNightSetting(true);
             }
+
+            interiorLightController.LightIntensityOverDay(progress);
 
             //UpdateTimeLabel(progress);
 

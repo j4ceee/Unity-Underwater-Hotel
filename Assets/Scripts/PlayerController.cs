@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
     public PlayerMovement playerMovementController;
     public PlayerLook playerLookController;
-    public GazeController gazeController;
+    public PlayerGazeController playerGazeController;
+    public PlayerThrow playerThrowController;
 
     public InputActionAsset playerActions;
 
@@ -73,7 +75,9 @@ public class PlayerController : MonoBehaviour
     {
         playerMovementController.PauseMovement(_isPaused); // enable / disable movement
         playerLookController.PauseLook(_isPaused); // enable / disable look
-        gazeController.ToggleRaycasts(!_isPaused); // enable / disable raycasts (opposite of pause -> disable when paused)
+
+        playerGazeController.ToggleInteractRaycasts(!_isPaused); // enable / disable raycasts & interaction (opposite of pause -> disable when paused)
+        playerThrowController.ToggleThrow(!_isPaused); // enable / disable throwing (opposite of pause -> disable when paused)
 
         pauseUi.SetActive(_isPaused);
         gameUi.SetActive(!_isPaused);

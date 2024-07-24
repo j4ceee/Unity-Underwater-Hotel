@@ -1,12 +1,13 @@
 using UnityEngine;
 
-public class InteractableObject : MonoBehaviour
+/// <summary>
+/// Base class for all interactable objects in the scene
+/// </summary>
+public abstract class InteractableObject : MonoBehaviour
 {
     [Tooltip("Text to show on HUD, describes the action that can be performed")]
     public string actionName;
 
-    public void TriggerAction()
-    {
-        Debug.Log("Triggered action: " + actionName);
-    }
+    public abstract void TriggerAction();
+
 }
