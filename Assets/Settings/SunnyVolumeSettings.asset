@@ -33,7 +33,7 @@ MonoBehaviour:
     m_Value: 1
   reflectSky:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   usedAlgorithm:
     m_OverrideState: 1
     m_Value: 1
