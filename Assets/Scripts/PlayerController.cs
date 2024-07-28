@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -30,7 +32,7 @@ public class PlayerController : MonoBehaviour
         // Enable the actions
         _pause.Enable();
 
-        ResumeGame();
+        PauseGame();
     }
 
     // Update is called once per frame
@@ -82,4 +84,37 @@ public class PlayerController : MonoBehaviour
         pauseUi.SetActive(_isPaused);
         gameUi.SetActive(!_isPaused);
     }
+
+    [HideInInspector]
+    public List<string> triggerList = new List<string>();
+
+    public void AddTrigger(string trigger)
+    {
+        triggerList.Add(trigger);
+    }
+
+    private int CountTriggerOccurences(string trigger)
+    {
+        int count = 0;
+        foreach (string t in triggerList)
+        {
+            if (t == trigger)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int DeleteTrigger(string trigger)
+    {
+        // delete the first occurence of the trigger
+        if (triggerList.Contains(trigger))
+        {
+            triggerList.Remove(trigger);
+        }
+
+        return CountTriggerOccurences(trigger);
+    }
+
 }

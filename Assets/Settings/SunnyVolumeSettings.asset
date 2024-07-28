@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Value: 1
   m_MinSmoothness:
     m_OverrideState: 1
-    m_Value: 0.409
+    m_Value: 0.43
   m_SmoothnessFadeStart:
     m_OverrideState: 1
     m_Value: 1
@@ -36,7 +36,7 @@ MonoBehaviour:
     m_Value: 0
   usedAlgorithm:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   depthBufferThickness:
     m_OverrideState: 1
     m_Value: 0.306
@@ -45,7 +45,7 @@ MonoBehaviour:
     m_Value: 0.1
   accumulationFactor:
     m_OverrideState: 1
-    m_Value: 0.75
+    m_Value: 1
   biasFactor:
     m_OverrideState: 0
     m_Value: 0.5
@@ -594,7 +594,7 @@ MonoBehaviour:
     m_Value: 4
   cascadeShadowSplit0:
     m_OverrideState: 1
-    m_Value: 0.05
+    m_Value: 0.07291666
   cascadeShadowSplit1:
     m_OverrideState: 1
     m_Value: 0.15
@@ -603,7 +603,7 @@ MonoBehaviour:
     m_Value: 0.3
   cascadeShadowBorder0:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.5714286
   cascadeShadowBorder1:
     m_OverrideState: 1
     m_Value: 0

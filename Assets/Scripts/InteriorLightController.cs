@@ -19,17 +19,26 @@ public class LightRoom
 {
     public GameObject roomLightGroup; // for turning all lights in the room on/off
     public List<LightGroup> lightGroups;
-    public bool isOn = false;
+    public bool isOn;
+}
+
+[System.Serializable]
+public class ReflProbe
+{
+    public HDProbe reflProbe;
+    public bool isOn;
 }
 
 public class InteriorLightController : MonoBehaviour
 {
     public List<LightRoom> lightRooms;
 
-    public float eveningStart = 0.66f;
-    public float eveningEnd = 0.755f;
-    public float morningStart = 0.245f;
-    public float morningEnd = 0.28f;
+    private float _progress;
+
+    private const float EveningStart = 0.66f;
+    private const float EveningEnd = 0.755f;
+    private const float MorningStart = 0.245f;
+    private const float MorningEnd = 0.28f;
 
     // Start is called before the first frame update
     void Start()
@@ -43,16 +52,23 @@ public class InteriorLightController : MonoBehaviour
             }
         }
 
+        foreach (var reflProbe in reflectionProbes)
+        {
+            UpdateReflectionProbe(reflProbe.reflProbe);
+        }
+
         StartCoroutine(UpdateLightProbesCoroutine());
     }
 
     public void LightIntensityOverDay(float progress)
     {
-        if (progress >= eveningEnd || progress <= morningStart)
+        _progress = progress;
+
+        if (progress >= EveningEnd || progress <= MorningStart)
         {
             SetAllLightsToNightIntensity();
         }
-        else if (progress < eveningStart && progress > morningEnd)
+        else if (progress < EveningStart && progress > MorningEnd)
         {
             SetAllLightsToDayIntensity();
         }
@@ -65,18 +81,18 @@ public class InteriorLightController : MonoBehaviour
                     foreach (Light lightInst in lightGroup.lights)
                     {
                         // sun is setting
-                        if (progress >= eveningStart && progress < eveningEnd)
+                        if (progress >= EveningStart && progress < EveningEnd)
                         {
                             // animate from day intensity to night intensity
                             lightInst.intensity = Mathf.Lerp(lightGroup.intensityDay, lightGroup.intensityNight,
-                                (progress - eveningStart) / (eveningEnd - eveningStart));
+                                (progress - EveningStart) / (EveningEnd - EveningStart));
                         }
                         // sun is rising
-                        else if (progress > morningStart && progress < morningEnd)
+                        else if (progress > MorningStart && progress < MorningEnd)
                         {
                             // animate from night intensity to day intensity
                             lightInst.intensity = Mathf.Lerp(lightGroup.intensityNight, lightGroup.intensityDay,
-                                (progress - morningStart) / (morningEnd - morningStart));
+                                (progress - MorningStart) / (MorningEnd - MorningStart));
                         }
                     }
                 }
@@ -94,7 +110,7 @@ public class InteriorLightController : MonoBehaviour
 
                 foreach (Light lightInst in lightGroup.lights)
                 {
-                    lightInst.intensity = (float)lightIntensity;
+                    lightInst.intensity = lightIntensity;
                 }
             }
         }
@@ -195,28 +211,75 @@ public class InteriorLightController : MonoBehaviour
         }
     }
 
-    [Tooltip("Group of LightProbes to update")]
-    public List<HDProbe> lightProbes; // list of LightProbes to update
+    [Tooltip("Group of Reflection Probes to update")]
+    public List<ReflProbe> reflectionProbes; // list of Reflection Probes to update
     [Tooltip("Interval in seconds between updates")]
-    public float updateInterval = 2.0f; // interval in seconds between updates
-    [Tooltip("Delay in frames between each LightProbe update (on top of Update Interval for each LightProbe)")]
+    public float updateInterval = 4.0f; // interval in seconds between updates
+    [Tooltip("Delay in frames between each Reflection Probe update (on top of Update Interval for each Reflection Probe)")]
     public int frameDelay = 7; // delay in frames between each LightProbe update
+
+    private const float MorningStartUpdate = 0.225f;
+    private const float MorningEndUpdate = .3f;
+    private const float EveningStartUpdate = .73f;
+    private const float EveningEndUpdate = .79f;
 
     private IEnumerator UpdateLightProbesCoroutine()
     {
+        int waitCounter = 0;
+        int inactiveDelay = 1;
+
         while (true)
         {
-            yield return new WaitForSeconds(updateInterval);
-            for (int i = 0; i < lightProbes.Count; i++)
+            if ((_progress >= MorningStartUpdate && _progress <= MorningEndUpdate) || (_progress >= EveningStartUpdate && _progress <= EveningEndUpdate))
             {
-                UpdateLightProbe(lightProbes[i]);
+                yield return new WaitForSeconds(0.25f * updateInterval);
+            }
+            else
+            {
+                yield return new WaitForSeconds(updateInterval);
+            }
+
+            for (int i = 0; i < reflectionProbes.Count; i++)
+            {
+                if (!reflectionProbes[i].isOn && waitCounter < inactiveDelay)
+                {
+                    continue;
+                }
+
+                UpdateReflectionProbe(reflectionProbes[i].reflProbe);
                 yield return new WaitForSeconds(frameDelay * Time.deltaTime);
+            }
+            waitCounter++;
+
+            if (waitCounter > inactiveDelay)
+            {
+                waitCounter = 0;
             }
         }
     }
 
-    private void UpdateLightProbe(HDProbe lightProbe)
+    private void UpdateReflectionProbe(HDProbe reflProbe)
     {
-        lightProbe.RequestRenderNextUpdate();
+        reflProbe.RequestRenderNextUpdate();
+    }
+
+    public void ToggleReflectionProbes(HDProbe[] reflProbes, bool isOn)
+    {
+        foreach (HDProbe tmpHdProbe in reflProbes)
+        {
+            if (isOn && tmpHdProbe)
+            {
+                UpdateReflectionProbe(tmpHdProbe);
+            }
+
+            // set isOn in the corresponding ReflProbe object
+            foreach (ReflProbe reflProbe in reflectionProbes)
+            {
+                if (reflProbe.reflProbe == tmpHdProbe)
+                {
+                    reflProbe.isOn = isOn;
+                }
+            }
+        }
     }
 }

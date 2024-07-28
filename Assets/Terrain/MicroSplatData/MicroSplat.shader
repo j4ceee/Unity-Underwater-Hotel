@@ -212,7 +212,6 @@ Shader "Terrain"
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
       #define _TESSDISTANCE 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _MSRENDERLOOP_UNITYHD 1
       #define _MSRENDERLOOP_UNITYHDRP2020 1
@@ -5824,7 +5823,6 @@ float3 GetTessFactors ()
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
       #define _TESSDISTANCE 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _MSRENDERLOOP_UNITYHD 1
       #define _MSRENDERLOOP_UNITYHDRP2020 1
@@ -11264,7 +11262,6 @@ float3 GetTessFactors ()
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
       #define _TESSDISTANCE 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _MSRENDERLOOP_UNITYHD 1
       #define _MSRENDERLOOP_UNITYHDRP2020 1
@@ -16774,7 +16771,6 @@ float3 GetTessFactors ()
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
       #define _TESSDISTANCE 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _MSRENDERLOOP_UNITYHD 1
       #define _MSRENDERLOOP_UNITYHDRP2020 1
@@ -22256,7 +22252,6 @@ float3 GetTessFactors ()
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
       #define _TESSDISTANCE 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _MSRENDERLOOP_UNITYHD 1
       #define _MSRENDERLOOP_UNITYHDRP2020 1
@@ -27692,7 +27687,6 @@ float3 GetTessFactors ()
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
       #define _TESSDISTANCE 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _MSRENDERLOOP_UNITYHD 1
       #define _MSRENDERLOOP_UNITYHDRP2020 1
@@ -33124,7 +33118,6 @@ float3 GetTessFactors ()
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
       #define _TESSDISTANCE 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _MSRENDERLOOP_UNITYHD 1
       #define _MSRENDERLOOP_UNITYHDRP2020 1
@@ -38585,7 +38578,6 @@ float3 GetTessFactors ()
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
       #define _TESSDISTANCE 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _MSRENDERLOOP_UNITYHD 1
       #define _MSRENDERLOOP_UNITYHDRP2020 1
@@ -44076,7 +44068,6 @@ void Frag(  VertexToPixel v2f
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
       #define _TESSDISTANCE 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _MSRENDERLOOP_UNITYHD 1
       #define _MSRENDERLOOP_UNITYHDRP2020 1
@@ -49530,7 +49521,6 @@ float3 GetTessFactors ()
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
       #define _TESSDISTANCE 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _MSRENDERLOOP_UNITYHD 1
       #define _MSRENDERLOOP_UNITYHDRP2020 1
@@ -54868,7 +54858,7 @@ float3 GetTessFactors ()
       
       
    }
-   Dependency "BaseMapShader" =  "Hidden/Terrain_Base-102238380"
-   Fallback "Hidden/Terrain_Base-102238380"
+   Dependency "BaseMapShader" =  "Hidden/Terrain_Base-1604085236"
+   Fallback "Hidden/Terrain_Base-1604085236"
    CustomEditor "MicroSplatShaderGUI"
 }

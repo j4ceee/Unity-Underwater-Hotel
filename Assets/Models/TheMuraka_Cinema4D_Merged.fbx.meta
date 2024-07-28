@@ -32,6 +32,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BAT_mirror
+    second: {fileID: 2100000, guid: 590e8af34cbd2304ba7a4191f65cde71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BAT_shower_controls
+    second: {fileID: 2100000, guid: 2fc071147ce37cb469a5371416f06ece, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: BAT_sink
     second: {fileID: 2100000, guid: 2d82728de062dfc498c7199aa4f4b27e, type: 2}
   - first:
@@ -79,6 +89,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: BR_mattress
     second: {fileID: 2100000, guid: 79673832eaf71cf419231b0936dc9ccb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BR_pillows
+    second: {fileID: 2100000, guid: 172213dacf4381149a15cebb8c0ef78b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

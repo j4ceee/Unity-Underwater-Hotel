@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: floor_br_lr
-  m_Shader: {fileID: -6465566751694194690, guid: 7ae48572dbc7391408ddc8d3e879e9ee,
+  m_Shader: {fileID: -6465566751694194690, guid: 54a247fc75367114582d477b254cdc45,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -230,7 +230,7 @@ Material:
     - _Mode: 0
     - _NormalMapSpace: 0
     - _NormalScale: 1
-    - _Normal_Strength: 1
+    - _Normal_Strength: 1.84
     - _ObjectSpaceUVMapping: 0
     - _ObjectSpaceUVMappingEmissive: 0
     - _OcclusionStrength: 1
@@ -249,7 +249,7 @@ Material:
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
     - _Roughness: 2
-    - _Roughness_Strength: 1
+    - _Roughness_Strength: 1.58
     - _Smoothness: 0
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0

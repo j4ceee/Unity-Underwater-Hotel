@@ -211,7 +211,6 @@ ZWrite Off
       #define _BRANCHSAMPLES 1
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _TERRAINBLENDABLESHADER 1
       #define _MSRENDERLOOP_UNITYHD 1
@@ -5103,7 +5102,6 @@ float3 GetTessFactors ()
       #define _BRANCHSAMPLES 1
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _TERRAINBLENDABLESHADER 1
       #define _MSRENDERLOOP_UNITYHD 1
@@ -9806,7 +9804,6 @@ float3 GetTessFactors ()
       #define _BRANCHSAMPLES 1
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _TERRAINBLENDABLESHADER 1
       #define _MSRENDERLOOP_UNITYHD 1
@@ -14522,7 +14519,6 @@ float3 GetTessFactors ()
       #define _BRANCHSAMPLES 1
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _TERRAINBLENDABLESHADER 1
       #define _MSRENDERLOOP_UNITYHD 1
@@ -19234,7 +19230,6 @@ float3 GetTessFactors ()
       #define _BRANCHSAMPLES 1
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _TERRAINBLENDABLESHADER 1
       #define _MSRENDERLOOP_UNITYHD 1
@@ -23975,7 +23970,6 @@ float3 GetTessFactors ()
       #define _BRANCHSAMPLES 1
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _TERRAINBLENDABLESHADER 1
       #define _MSRENDERLOOP_UNITYHD 1
@@ -28746,7 +28740,6 @@ void Frag(  VertexToPixel v2f
       #define _BRANCHSAMPLES 1
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _TERRAINBLENDABLESHADER 1
       #define _MSRENDERLOOP_UNITYHD 1
@@ -33480,7 +33473,6 @@ float3 GetTessFactors ()
       #define _BRANCHSAMPLES 1
       #define _BRANCHSAMPLESAGR 1
       #define _TERRAINBLENDING 1
-      #define _PERTEXTESSDISPLACE 1
       #define _MSRENDERLOOP_UNITYHDRP2022 1
       #define _TERRAINBLENDABLESHADER 1
       #define _MSRENDERLOOP_UNITYHD 1

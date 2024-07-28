@@ -159,12 +159,14 @@ Material:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _NoiseHeightData: {r: 1, g: 0.15, b: 0, a: 0}
     - _NormalNoiseScaleStrength: {r: 8, g: 0.5, b: 0, a: 0}
+    - _POMParams: {r: 0.08, g: 30, b: 30, a: 8}
+    - _ParallaxParams: {r: 0.08, g: 30, b: 30, a: 0}
     - _ResampleDistanceParams: {r: 0.25, g: 180, b: 500, a: 0}
     - _TerrainBlendParams: {r: 1, g: 0.4, b: 0, a: 0}
     - _TerrainBlendParams2: {r: 40, g: 0, b: 0, a: 0}
     - _TerrainBounds: {r: 0, g: 0, b: 512, a: 512}
     - _TerrainHeightmapScale: {r: 0, g: 0, b: 100, a: 0}
-    - _TessData1: {r: 12, g: 0.8, b: 4, a: 0}
-    - _TessData2: {r: 20, g: 45, b: 0.2, a: 0.25}
+    - _TessData1: {r: 8.5, g: 0.59, b: 4, a: 0}
+    - _TessData2: {r: 10, g: 20, b: 0.24900001, a: 0.218}
     - _UVScale: {r: 45, g: 45, b: 0, a: 0}
   m_BuildTextureStacks: []
