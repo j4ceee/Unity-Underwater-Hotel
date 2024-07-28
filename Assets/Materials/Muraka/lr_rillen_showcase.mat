@@ -23,7 +23,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: lr_rillen_showcase
+  m_Name: LR_rillen_showcase
   m_Shader: {fileID: -6465566751694194690, guid: 7ae48572dbc7391408ddc8d3e879e9ee,
     type: 3}
   m_Parent: {fileID: 0}

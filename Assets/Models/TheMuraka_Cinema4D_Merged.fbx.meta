@@ -7,38 +7,168 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: bed_outer
+      name: BAT_Ablage
+    second: {fileID: 2100000, guid: a53cd5a9850b5d745a70c4d0b6e9da2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BAT_Metal
+    second: {fileID: 2100000, guid: a9b9248eaafc0d4458b91d600182b8b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BAT_Regendusche
+    second: {fileID: 2100000, guid: 60506744d3272a54582930bef12c5018, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BAT_Schlauch
+    second: {fileID: 2100000, guid: c970d081891b2424d9875d2b69fd9fe5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BAT_ShowerHandle
+    second: {fileID: 2100000, guid: 1928272dfe3b33647b87c119981bf108, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BAT_sink
+    second: {fileID: 2100000, guid: 2d82728de062dfc498c7199aa4f4b27e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BAT_sink_table
+    second: {fileID: 2100000, guid: c60ba842b492476449ef9cc690e4dcad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BAT_structural
+    second: {fileID: 2100000, guid: ef9d4d82946ac5c40a4f33bcc04c5ad5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BR_Bedside_Table
+    second: {fileID: 2100000, guid: d54c13f615f5e8046a0b0ba40d9d5e5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BR_Polster
+    second: {fileID: 2100000, guid: 705b9ec70269db541aef15f8990d3655, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BR_SpotLights
+    second: {fileID: 2100000, guid: 1417a404dfea59e429bc5dc74f983ec9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BR_bed_outer
     second: {fileID: 2100000, guid: c491d602abb510d4190b7bb28a0f79b2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: br_table_lamp
+      name: BR_ledge_bed
+    second: {fileID: 2100000, guid: 7633a4a1bf719a84cb9fe1100da3c197, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BR_ledge_glass
+    second: {fileID: 2100000, guid: 86e0fc65d8246b0449ae3e3793723502, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BR_mattress
+    second: {fileID: 2100000, guid: 79673832eaf71cf419231b0936dc9ccb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BR_table_lamp
     second: {fileID: 2100000, guid: cfe7ee263a10cd5408d77411069c8bab, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: br_table_lamp_bottom
+      name: BR_table_lamp_bottom
     second: {fileID: 2100000, guid: fd71f918c9a78aa4cbb1ed982c1d323c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LR_ceiling
+    second: {fileID: 2100000, guid: 1b4e22842c8606544af3b8a8ba2576fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LR_curtain
+    second: {fileID: 2100000, guid: b83f3660ce5984e4dbf016cf1b30eb16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LR_rillen_glass
+    second: {fileID: 2100000, guid: 649ce2490e616c64cbdad6fd40e8ec40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LR_rillen_showcase
+    second: {fileID: 2100000, guid: faa4774362bd6be45b1d56828ffdeb8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LR_sessel1
+    second: {fileID: 2100000, guid: ebb916595d8196a45bb613a753823763, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LR_sessel2
+    second: {fileID: 2100000, guid: 61a42971ee85e114a9199a6bf7b7a238, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LR_table1
+    second: {fileID: 2100000, guid: 8472881e785ca7e43bcbd1b2a6d80c95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LR_table2
+    second: {fileID: 2100000, guid: 848ef7d3066676945b03e0ade7ad61a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LR_table3
+    second: {fileID: 2100000, guid: cf1c7157c5b545546b36dda3a70084dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LR_wall_l
+    second: {fileID: 2100000, guid: fc205166f3035da4f9ba73e3e7e72f61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LR_wall_r
+    second: {fileID: 2100000, guid: 0047f159cfd3f9845942cdfe327737c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ST_elev_blue
+    second: {fileID: 2100000, guid: 0ed48fb7a1b54a146a3f4783819bce9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ST_elev_shiny
+    second: {fileID: 2100000, guid: a70d994c3df41f240beae205e2371a2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WR_wardrobe
+    second: {fileID: 2100000, guid: 4667d02436ba1d345b3011e2f04631cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _rillen_umrandung_br_lr
+    second: {fileID: 2100000, guid: b26c83c54deaf614cb2e5ba3e4fa1d9a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ceiling_light
     second: {fileID: 2100000, guid: 3e27684cd9010484387d3dc781bb1f42, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: curtain
-    second: {fileID: 2100000, guid: b83f3660ce5984e4dbf016cf1b30eb16, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: elev_blue
-    second: {fileID: 2100000, guid: 0ed48fb7a1b54a146a3f4783819bce9b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: elev_shiny
-    second: {fileID: 2100000, guid: a70d994c3df41f240beae205e2371a2c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -72,48 +202,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ledge_bed
-    second: {fileID: 2100000, guid: 7633a4a1bf719a84cb9fe1100da3c197, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ledge_glass
-    second: {fileID: 2100000, guid: 86e0fc65d8246b0449ae3e3793723502, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: light_glow
     second: {fileID: 2100000, guid: e5a18afb095f12245b5525c6b273fb60, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lr_rillen_glass
-    second: {fileID: 2100000, guid: 649ce2490e616c64cbdad6fd40e8ec40, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lr_rillen_showcase
-    second: {fileID: 2100000, guid: faa4774362bd6be45b1d56828ffdeb8e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lr_table1
-    second: {fileID: 2100000, guid: 8472881e785ca7e43bcbd1b2a6d80c95, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lr_table2
-    second: {fileID: 2100000, guid: 848ef7d3066676945b03e0ade7ad61a7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lr_table3
-    second: {fileID: 2100000, guid: cf1c7157c5b545546b36dda3a70084dd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mattress
-    second: {fileID: 2100000, guid: 79673832eaf71cf419231b0936dc9ccb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -124,36 +214,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: porcelain
     second: {fileID: 2100000, guid: 4e1ef2e7ae784374ba7065043c9e124c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: sessel1
-    second: {fileID: 2100000, guid: ebb916595d8196a45bb613a753823763, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: sessel2
-    second: {fileID: 2100000, guid: 61a42971ee85e114a9199a6bf7b7a238, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: sink
-    second: {fileID: 2100000, guid: 2d82728de062dfc498c7199aa4f4b27e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: sink_table
-    second: {fileID: 2100000, guid: c60ba842b492476449ef9cc690e4dcad, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: umrandung_br_lr
-    second: {fileID: 2100000, guid: b26c83c54deaf614cb2e5ba3e4fa1d9a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: wardrobe
-    second: {fileID: 2100000, guid: 4667d02436ba1d345b3011e2f04631cd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1

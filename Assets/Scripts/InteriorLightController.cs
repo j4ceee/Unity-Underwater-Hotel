@@ -1,10 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Scripts;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.Rendering.HighDefinition;
 
 [System.Serializable]
 public class LightGroup
@@ -45,11 +42,8 @@ public class InteriorLightController : MonoBehaviour
                 lightGroup.lightGroup.SetActive(lightRoom.isOn);
             }
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+        StartCoroutine(UpdateLightProbesCoroutine());
     }
 
     public void LightIntensityOverDay(float progress)
@@ -199,5 +193,30 @@ public class InteriorLightController : MonoBehaviour
                 lightGroup.lights = lightGroup.lightGroup.GetComponentsInChildren<Light>();
             }
         }
+    }
+
+    [Tooltip("Group of LightProbes to update")]
+    public List<HDProbe> lightProbes; // list of LightProbes to update
+    [Tooltip("Interval in seconds between updates")]
+    public float updateInterval = 2.0f; // interval in seconds between updates
+    [Tooltip("Delay in frames between each LightProbe update (on top of Update Interval for each LightProbe)")]
+    public int frameDelay = 7; // delay in frames between each LightProbe update
+
+    private IEnumerator UpdateLightProbesCoroutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(updateInterval);
+            for (int i = 0; i < lightProbes.Count; i++)
+            {
+                UpdateLightProbe(lightProbes[i]);
+                yield return new WaitForSeconds(frameDelay * Time.deltaTime);
+            }
+        }
+    }
+
+    private void UpdateLightProbe(HDProbe lightProbe)
+    {
+        lightProbe.RequestRenderNextUpdate();
     }
 }

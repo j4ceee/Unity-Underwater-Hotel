@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 1165731410057048003}
   - component: {fileID: 6210608833789997082}
   - component: {fileID: 4373368367789566526}
-  - component: {fileID: 5835230843704699372}
   m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -304,79 +303,6 @@ MonoBehaviour:
     _viewStencil: 0
     _disableHeightAboveWaterOptimization: 0
     _disableArtifactCorrection: 0
---- !u!114 &5835230843704699372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6128191631892237347}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ff8316675e444bc893ea5ecbbf3ba26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _version: 0
-  _minimumWaveLength: 1
-  _normaliseDistance: 1
-  _maximumDistance: 100
-  _distanceCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _onBelowOceanSurface:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 0
-  _onAboveOceanSurface:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _distanceFromOceanSurface:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &6885180248603291346
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovementController: {fileID: 2880122416847272435}
   playerLookController: {fileID: 6210608833789997082}
-  gazeController: {fileID: 4220295757854423969}
+  playerGazeController: {fileID: 0}
+  playerThrowController: {fileID: 0}
   playerActions: {fileID: -944628639613478452, guid: 04267baf7b0cb734cae8a9bc66c054cc,
     type: 3}
   pauseUi: {fileID: 0}
@@ -474,6 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 8607025019635095013}
+  player: {fileID: 0}
   speed: 4
   gravity: -10
   jumpHeight: 0.6
@@ -496,6 +424,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
+  mainCamera: {fileID: 0}
+  playerActions: {fileID: 0}
   shootStrength: 100
 --- !u!114 &4220295757854423969
 MonoBehaviour:
@@ -512,6 +442,7 @@ MonoBehaviour:
   maxDistance: 2
   actionLabel: {fileID: 0}
   mainCamera: {fileID: 8030145972138447534}
+  playerActions: {fileID: 0}
 --- !u!1 &9079728018597548481
 GameObject:
   m_ObjectHideFlags: 0
