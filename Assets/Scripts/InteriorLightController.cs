@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
 
@@ -12,6 +13,8 @@ public class LightGroup
     public bool isOn = true;
 
     public Light[] lights; // for setting the intensity
+
+    [ItemCanBeNull] public GameObject[] emissiveObjects; // for setting the emissive material intensity
 }
 
 [System.Serializable]
@@ -157,8 +160,36 @@ public class InteriorLightController : MonoBehaviour
                         lightInst.enabled = !group.isOn;
                     }
                 }
+
                 group.isOn = group.lights[0].enabled;
+
+                if (group.emissiveObjects.Length > 0)
+                {
+                    // foreach child object of the light group
+                    foreach (GameObject emissiveObject in group.emissiveObjects)
+                    {
+                        if (emissiveObject)
+                        {
+                            Debug.Log("Toggling emissive material: " + emissiveObject.name);
+                            ToggleEmissiveMaterialIntensity(emissiveObject, group.isOn);
+                        }
+                    }
+                }
             }
+        }
+    }
+
+    private static readonly int EmissionIntensity = Shader.PropertyToID("_Emission_Intensity");
+    private void ToggleEmissiveMaterialIntensity(GameObject lightObject, bool isOn)
+    {
+        // get the material of the light object (of shader type Shader Graph/Lamp Emissive)
+        Material[] material = lightObject.GetComponent<Renderer>().materials;
+
+        foreach (Material mat in material)
+        {
+            Debug.Log("Material name: " + mat.shader.name);
+            if (mat.shader.name != "Shader Graphs/Lamp Emissive") continue;
+            mat.SetFloat(EmissionIntensity, isOn ? 100 : 0);
         }
     }
 
@@ -210,6 +241,10 @@ public class InteriorLightController : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Reflection Probes handling
+    /// </summary>
 
     [Tooltip("Group of Reflection Probes to update")]
     public List<ReflProbe> reflectionProbes; // list of Reflection Probes to update

@@ -32,6 +32,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BAT_duschkopf
+    second: {fileID: 2100000, guid: 2a4dfb55d93055d4fa1e32a3c18b5a15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: BAT_mirror
     second: {fileID: 2100000, guid: 590e8af34cbd2304ba7a4191f65cde71, type: 2}
   - first:
@@ -57,6 +62,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BAT_wall_BR
+    second: {fileID: 2100000, guid: 55db0a283b706f040ad765b784d54521, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: BR_Bedside_Table
     second: {fileID: 2100000, guid: d54c13f615f5e8046a0b0ba40d9d5e5f, type: 2}
   - first:
@@ -69,6 +79,21 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: BR_SpotLights
     second: {fileID: 2100000, guid: 1417a404dfea59e429bc5dc74f983ec9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BR_arch
+    second: {fileID: 2100000, guid: 1709340ac46a6064e9d24ccd6806ffe0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BR_arch_border
+    second: {fileID: 2100000, guid: 901b6eb01163f204e8e62965787915cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BR_arch_holes
+    second: {fileID: 2100000, guid: 370b460dcc8ad804597824feb11157b9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -107,6 +132,51 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: DR_Seat
+    second: {fileID: 2100000, guid: 11bf5cd5ed039d34f84d8ec51fe5154b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DR_outer_wall
+    second: {fileID: 2100000, guid: a77de9c520300db45b0f4ca85f370bae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DR_table_feet
+    second: {fileID: 2100000, guid: 827840f15e8b40f40aa9a498e82df551, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DR_table_top
+    second: {fileID: 2100000, guid: d6150f26d2d123344ad963236290cbc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DR_wall_WR
+    second: {fileID: 2100000, guid: 9fbc4099ff6793b4389568277ece9cee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HW_door_frame
+    second: {fileID: 2100000, guid: f405e284dfca4a141ad2003dd9dc7be1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HW_walls
+    second: {fileID: 2100000, guid: fbad453d3b5f8d140b60397873b54b52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LR_arch
+    second: {fileID: 2100000, guid: 883ae7d14ea37724cbf3e19ddea75b43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LR_arch_holes
+    second: {fileID: 2100000, guid: 63675b98d154b154db5468e001a8aeb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: LR_ceiling
     second: {fileID: 2100000, guid: 1b4e22842c8606544af3b8a8ba2576fb, type: 2}
   - first:
@@ -117,6 +187,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: LR_push_trays
+    second: {fileID: 2100000, guid: cb62955ef11602e4f923ecab9a98f80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: LR_rillen_glass
     second: {fileID: 2100000, guid: 649ce2490e616c64cbdad6fd40e8ec40, type: 2}
   - first:
@@ -124,6 +199,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: LR_rillen_showcase
     second: {fileID: 2100000, guid: faa4774362bd6be45b1d56828ffdeb8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LR_schuber_ablage
+    second: {fileID: 2100000, guid: 4dc714fc33060e647a61065d37073ac7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -172,8 +252,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: SW_stairs
+    second: {fileID: 2100000, guid: f68660fd337aa7f45bd502f9ccc8dfd9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SW_wall
+    second: {fileID: 2100000, guid: 531d53b465c243942ab1e72e4c034ab1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WR_wall_inner
+    second: {fileID: 2100000, guid: 55c144d8b5d0ab241a300eab0c81bff0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: WR_wardrobe
     second: {fileID: 2100000, guid: 4667d02436ba1d345b3011e2f04631cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _ankers
+    second: {fileID: 2100000, guid: 1fca79b15fc0ffd498f167303cf70f32, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -182,8 +282,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: bed_light_glow
+    second: {fileID: 2100000, guid: a8e4bb0e47540a74086442c2e1853451, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ceiling_l
+    second: {fileID: 2100000, guid: e1da3b74a1ea64649911846ba794b87a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: ceiling_light
     second: {fileID: 2100000, guid: 3e27684cd9010484387d3dc781bb1f42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ceiling_light_glow
+    second: {fileID: 2100000, guid: 6f874a00f4294fd4da51a52d8823cf2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ceiling_r
+    second: {fileID: 2100000, guid: 71c76daf7c7faa74aa2c1e2607c4b27e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -217,11 +337,6 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: light_glow
-    second: {fileID: 2100000, guid: e5a18afb095f12245b5525c6b273fb60, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: outside
     second: {fileID: 2100000, guid: bcd6ebdf575057642917f88ade8f25cf, type: 2}
   - first:
@@ -229,6 +344,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: porcelain
     second: {fileID: 2100000, guid: 4e1ef2e7ae784374ba7065043c9e124c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: spotlight_glow
+    second: {fileID: 2100000, guid: b38d60b34abfe56428f75244b6ea9263, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1

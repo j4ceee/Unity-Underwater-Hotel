@@ -177,7 +177,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DetailNormalScale: 1
     - _DetailSmoothnessScale: 1
-    - _Diffuse_Brightness: 0.106
+    - _Diffuse_Brightness: 0.02
     - _DiffusionProfile: 0
     - _DiffusionProfileHash: 0
     - _DisplacementLockObjectScale: 1
@@ -237,7 +237,7 @@ Material:
     - _RefractionModel: 0
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
-    - _Roughness_Strength: 1.64
+    - _Roughness_Strength: 1
     - _Smoothness: 0.5656854
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
