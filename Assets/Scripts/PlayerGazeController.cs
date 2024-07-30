@@ -16,6 +16,7 @@ public class PlayerGazeController : MonoBehaviour
 
     // store the last interactable object that was hit
     private InteractableObject _currentInteractable;
+    private Vector3 _interactableObjectRotation;
 
     private bool _doRaycast = true;
 
@@ -60,8 +61,9 @@ public class PlayerGazeController : MonoBehaviour
 
             if (_currentInteractable == hitInteractable) return;
             // show action label if object is hit & interactable
-            actionLabel.text = hitInteractable.actionName;
+            actionLabel.text = hitInteractable.GetInteractionName();
             _currentInteractable = hitInteractable;
+            _interactableObjectRotation = hit.collider.transform.rotation.eulerAngles;
         }
         else
         {
@@ -71,6 +73,7 @@ public class PlayerGazeController : MonoBehaviour
                 actionLabel.text = "";
             }
             _currentInteractable = null;
+            _interactableObjectRotation = Vector3.zero;
         }
     }
 
@@ -83,5 +86,10 @@ public class PlayerGazeController : MonoBehaviour
         {
             _currentInteractable.TriggerAction();
         }
+    }
+
+    public Vector3 GetInteractableObjectRotation()
+    {
+        return _interactableObjectRotation;
     }
 }

@@ -23,7 +23,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: lr_table2
+  m_Name: LR_table2
   m_Shader: {fileID: -6465566751694194690, guid: 54a247fc75367114582d477b254cdc45,
     type: 3}
   m_Parent: {fileID: 0}
@@ -253,7 +253,7 @@ Material:
     - _RefractionModel: 0
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
-    - _Roughness_Strength: 1
+    - _Roughness_Strength: 2
     - _Smoothness: 0.5656854
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 
 /// <summary>
@@ -8,8 +9,11 @@ using UnityEngine.InputSystem;
 public class PlayerThrow : MonoBehaviour
 {
     // model which will be thrown
-    public GameObject projectile;
+    public GameObject projectilePrefab;
+    private Vector3 _prefabRotation;
     public Camera mainCamera;
+
+    private bool _hasObject = false;
 
     public InputActionAsset playerActions;
     private InputAction _throw;
@@ -33,17 +37,33 @@ public class PlayerThrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_throw.triggered)
+        if (_throw.triggered && _hasObject)
         {
             // Calculate a point in front of the camera
             Vector3 position = mainCamera.transform.position + transform.forward * 0.5f;
 
             // Create a new Instance of the prefab
-            GameObject newProjectile = Instantiate(projectile, position, Quaternion.identity);
+            GameObject newProjectile = Instantiate(projectilePrefab, position, Quaternion.Euler(_prefabRotation));
 
+            newProjectile.GetComponent<PickUpObject>().objectToThrow = projectilePrefab;
             // Add a little bit of force
             newProjectile.GetComponent<Rigidbody>().AddForce(mainCamera.transform.forward * shootStrength);
+
+            // unset projectile variable
+            projectilePrefab = null; // only throw once
+
+            _hasObject = false;
         }
+    }
+
+    public void SetProjectileFromPrefab(GameObject prefab, Vector3 rotation, GameObject destroyObject)
+    {
+        projectilePrefab = prefab;
+        _prefabRotation = rotation;
+
+        _hasObject = true;
+
+        Destroy(destroyObject);
     }
 
     public void ToggleThrow(bool enable)
@@ -56,5 +76,10 @@ public class PlayerThrow : MonoBehaviour
         {
             _throw.Disable();
         }
+    }
+
+    public bool ObjectIsEquipped()
+    {
+        return _hasObject;
     }
 }

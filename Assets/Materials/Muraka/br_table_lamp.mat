@@ -23,7 +23,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: br_table_lamp
+  m_Name: BR_table_lamp
   m_Shader: {fileID: -6465566751694194690, guid: 54a247fc75367114582d477b254cdc45,
     type: 3}
   m_Parent: {fileID: 0}
@@ -227,7 +227,7 @@ Material:
     - _Ior: 1.5
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
-    - _Is_Roughness: 0
+    - _Is_Roughness: 1
     - _LinkDetailsWithBase: 1
     - _MaterialID: 1
     - _Metallic: 0
