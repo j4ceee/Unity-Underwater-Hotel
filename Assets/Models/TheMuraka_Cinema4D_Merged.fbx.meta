@@ -37,11 +37,6 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: BAT_mirror
-    second: {fileID: 2100000, guid: 590e8af34cbd2304ba7a4191f65cde71, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: BAT_shower_controls
     second: {fileID: 2100000, guid: 2fc071147ce37cb469a5371416f06ece, type: 2}
   - first:
@@ -77,11 +72,6 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: BR_SpotLights
-    second: {fileID: 2100000, guid: 1417a404dfea59e429bc5dc74f983ec9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: BR_arch
     second: {fileID: 2100000, guid: 1709340ac46a6064e9d24ccd6806ffe0, type: 2}
   - first:
@@ -114,21 +104,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: BR_mattress
     second: {fileID: 2100000, guid: 79673832eaf71cf419231b0936dc9ccb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BR_pillows
-    second: {fileID: 2100000, guid: 172213dacf4381149a15cebb8c0ef78b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BR_table_lamp
-    second: {fileID: 2100000, guid: cfe7ee263a10cd5408d77411069c8bab, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BR_table_lamp_bottom
-    second: {fileID: 2100000, guid: fd71f918c9a78aa4cbb1ed982c1d323c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -184,11 +159,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: LR_curtain
     second: {fileID: 2100000, guid: b83f3660ce5984e4dbf016cf1b30eb16, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LR_push_trays
-    second: {fileID: 2100000, guid: cb62955ef11602e4f923ecab9a98f80c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -252,13 +222,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: SW_stairs
+      name: SW_stairs_bottom
+    second: {fileID: 2100000, guid: 73dbb025fefd229409ca46bb4dce02a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SW_stairs_top
     second: {fileID: 2100000, guid: f68660fd337aa7f45bd502f9ccc8dfd9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: SW_wall
     second: {fileID: 2100000, guid: 531d53b465c243942ab1e72e4c034ab1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SW_wood
+    second: {fileID: 2100000, guid: 7404a88b742712747b85dab7ee50faba, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -282,18 +262,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: bed_light_glow
-    second: {fileID: 2100000, guid: a8e4bb0e47540a74086442c2e1853451, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: ceiling_l
     second: {fileID: 2100000, guid: e1da3b74a1ea64649911846ba794b87a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ceiling_light
-    second: {fileID: 2100000, guid: 3e27684cd9010484387d3dc781bb1f42, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -332,23 +302,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: glowing_strips
-    second: {fileID: 2100000, guid: e9d7de2a271f49e4c97045beb67ceb14, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: outside
     second: {fileID: 2100000, guid: bcd6ebdf575057642917f88ade8f25cf, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: porcelain
-    second: {fileID: 2100000, guid: 4e1ef2e7ae784374ba7065043c9e124c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: spotlight_glow
-    second: {fileID: 2100000, guid: b38d60b34abfe56428f75244b6ea9263, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1

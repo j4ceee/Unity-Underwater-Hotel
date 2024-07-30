@@ -14,6 +14,7 @@ public class ToggleLightGroup : InteractableObject
 
     public override void TriggerAction()
     {
+        if (!_interiorLightController || !lightGroup) return;
         _interiorLightController.ToggleSpecificLightGroup(lightGroup);
     }
 }

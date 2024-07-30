@@ -125,15 +125,32 @@ public class InteriorLightController : MonoBehaviour
         {
             if (lightRoom.roomLightGroup != roomLightGroup) continue; // skip if not the room we want to toggle
 
+            if (isOn == null)
+            {
+                isOn = !lightRoom.isOn;
+            }
+
             foreach (LightGroup lightGroup in lightRoom.lightGroups)
             {
-                if (isOn != null)
+                lightGroup.lightGroup.SetActive((bool) isOn);
+
+                if (lightGroup.emissiveObjects.Length > 0)
                 {
-                    lightGroup.lightGroup.SetActive((bool) isOn);
-                }
-                else
-                {
-                    lightGroup.lightGroup.SetActive(!lightRoom.isOn);
+                    // foreach child object of the light group
+                    foreach (GameObject emissiveObject in lightGroup.emissiveObjects)
+                    {
+                        if (emissiveObject)
+                        {
+                            if ((bool)isOn && lightGroup.isOn)
+                            {
+                                ToggleEmissiveMaterialIntensity(emissiveObject, true);
+                            }
+                            else
+                            {
+                                ToggleEmissiveMaterialIntensity(emissiveObject, false);
+                            }
+                        }
+                    }
                 }
             }
 
@@ -170,7 +187,6 @@ public class InteriorLightController : MonoBehaviour
                     {
                         if (emissiveObject)
                         {
-                            Debug.Log("Toggling emissive material: " + emissiveObject.name);
                             ToggleEmissiveMaterialIntensity(emissiveObject, group.isOn);
                         }
                     }
@@ -187,7 +203,6 @@ public class InteriorLightController : MonoBehaviour
 
         foreach (Material mat in material)
         {
-            Debug.Log("Material name: " + mat.shader.name);
             if (mat.shader.name != "Shader Graphs/Lamp Emissive") continue;
             mat.SetFloat(EmissionIntensity, isOn ? 100 : 0);
         }
