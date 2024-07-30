@@ -222,6 +222,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: SW_elevator_wall
+    second: {fileID: 2100000, guid: aebfe05c0bf25f34db0c51d3ffc6e469, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: SW_stairs_bottom
     second: {fileID: 2100000, guid: 73dbb025fefd229409ca46bb4dce02a1, type: 2}
   - first:
@@ -234,6 +239,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: SW_wall
     second: {fileID: 2100000, guid: 531d53b465c243942ab1e72e4c034ab1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SW_white_border
+    second: {fileID: 2100000, guid: e598ffba962706e4ca8cabe7f8bdfc77, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
