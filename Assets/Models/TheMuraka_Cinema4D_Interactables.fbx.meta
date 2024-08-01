@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BAT_Ablage
+    second: {fileID: 2100000, guid: a53cd5a9850b5d745a70c4d0b6e9da2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: BAT_mirror
     second: {fileID: 2100000, guid: 590e8af34cbd2304ba7a4191f65cde71, type: 2}
   - first:
@@ -32,13 +37,53 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BR_LightController
+    second: {fileID: 2100000, guid: 461947308d398594bbbf5cc172c190bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BR_sunblind
+    second: {fileID: 2100000, guid: b920acf866da4e446aa2f681d9568e41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: LR_push_trays
     second: {fileID: 2100000, guid: cb62955ef11602e4f923ecab9a98f80c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: icon_blue_green
+    second: {fileID: 2100000, guid: 6294d78d65521d44d8294eb32a95cf65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: icon_red_purple
+    second: {fileID: 2100000, guid: 502271b5c37d3eb46a2f683c2e5ccf54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: icon_stormy
+    second: {fileID: 2100000, guid: e1c094449077458458bae96635346760, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: icon_sunny
+    second: {fileID: 2100000, guid: 845415322723438479ef0e37f144d27d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: porcelain
     second: {fileID: 2100000, guid: 4e1ef2e7ae784374ba7065043c9e124c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tablet_body
+    second: {fileID: 2100000, guid: 997c6e1991bc53d4d963df6781926d5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tablet_screen
+    second: {fileID: 2100000, guid: f078acc32c24dec439bac80fda8467b9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1

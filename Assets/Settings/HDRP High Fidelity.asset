@@ -103,16 +103,16 @@ MonoBehaviour:
       areaLightShadowAtlas:
         shadowAtlasResolution: 4096
         shadowAtlasDepthBits: 16
-        useDynamicViewportRescale: 0
-      cachedPunctualLightShadowAtlas: 4096
-      cachedAreaLightShadowAtlas: 4096
+        useDynamicViewportRescale: 1
+      cachedPunctualLightShadowAtlas: 8192
+      cachedAreaLightShadowAtlas: 16384
       allowDirectionalMixedCachedShadows: 0
       shadowResolutionDirectional:
         m_Values: 00040000000800000010000000100000
         m_SchemaId:
           m_Id: With4Levels
       shadowResolutionPunctual:
-        m_Values: 00040000000800000010000000100000
+        m_Values: 00020000000400000008000000100000
         m_SchemaId:
           m_Id: With4Levels
       shadowResolutionArea:
@@ -183,7 +183,7 @@ MonoBehaviour:
       ChromaticAberrationMaxSamples: 03000000060000000c000000
     lightSettings:
       useContactShadow:
-        m_Values: 000001
+        m_Values: 000000
         m_SchemaId:
           m_Id: 
     maximumLODLevel:

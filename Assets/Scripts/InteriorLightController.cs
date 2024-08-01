@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
+using UnityEngine.Serialization;
 
 [System.Serializable]
 public class LightGroup
@@ -13,6 +14,7 @@ public class LightGroup
     public bool isOn = true;
 
     public Light[] lights; // for setting the intensity
+    public HDAdditionalLightData[] hdAdditionalLightData; // for setting the intensity
 
     [ItemCanBeNull] public GameObject[] emissiveObjects; // for setting the emissive material intensity
 }
@@ -61,6 +63,7 @@ public class InteriorLightController : MonoBehaviour
         }
 
         StartCoroutine(UpdateLightProbesCoroutine());
+        StartCoroutine(UpdateLights());
     }
 
     public void LightIntensityOverDay(float progress)
@@ -243,7 +246,7 @@ public class InteriorLightController : MonoBehaviour
         }
     }
 
-    [ContextMenu("Fetch lights in existing light groups")]
+    [ContextMenu("Fetch lights + light data in existing light groups")]
     public void FetchLightsInLightGroups()
     {
 
@@ -253,6 +256,44 @@ public class InteriorLightController : MonoBehaviour
             foreach (LightGroup lightGroup in lightRoom.lightGroups)
             {
                 lightGroup.lights = lightGroup.lightGroup.GetComponentsInChildren<Light>();
+                lightGroup.hdAdditionalLightData = lightGroup.lightGroup.GetComponentsInChildren<HDAdditionalLightData>();
+            }
+        }
+    }
+
+    [Tooltip("Interval in seconds between light updates")]
+    public float updateIntervalLights = 2.0f;
+    private IEnumerator UpdateLights()
+    {
+        int waitCounter = 0;
+        int inactiveDelay = 1;
+
+        while (true)
+        {
+            yield return new WaitForSeconds(updateIntervalLights);
+
+            // update lights
+            foreach (LightRoom lightRoom in lightRooms)
+            {
+                foreach (LightGroup lightGroup in lightRoom.lightGroups)
+                {
+                    if (!lightGroup.isOn && waitCounter < inactiveDelay)
+                    {
+                        continue;
+                    }
+
+                    foreach (HDAdditionalLightData lightData in lightGroup.hdAdditionalLightData)
+                    {
+                        lightData.RequestShadowMapRendering();
+                    }
+                }
+            }
+
+            waitCounter++;
+
+            if (waitCounter > inactiveDelay)
+            {
+                waitCounter = 0;
             }
         }
     }
@@ -263,8 +304,8 @@ public class InteriorLightController : MonoBehaviour
 
     [Tooltip("Group of Reflection Probes to update")]
     public List<ReflProbe> reflectionProbes; // list of Reflection Probes to update
-    [Tooltip("Interval in seconds between updates")]
-    public float updateInterval = 4.0f; // interval in seconds between updates
+    [FormerlySerializedAs("updateInterval")] [Tooltip("Interval in seconds between updates")]
+    public float updateIntervalReflProbes = 4.0f; // interval in seconds between updates
     [Tooltip("Delay in frames between each Reflection Probe update (on top of Update Interval for each Reflection Probe)")]
     public int frameDelay = 7; // delay in frames between each LightProbe update
 
@@ -282,11 +323,11 @@ public class InteriorLightController : MonoBehaviour
         {
             if ((_progress >= MorningStartUpdate && _progress <= MorningEndUpdate) || (_progress >= EveningStartUpdate && _progress <= EveningEndUpdate))
             {
-                yield return new WaitForSeconds(0.25f * updateInterval);
+                yield return new WaitForSeconds(0.25f * updateIntervalReflProbes);
             }
             else
             {
-                yield return new WaitForSeconds(updateInterval);
+                yield return new WaitForSeconds(updateIntervalReflProbes);
             }
 
             for (int i = 0; i < reflectionProbes.Count; i++)

@@ -18,6 +18,8 @@ public class PlayerGazeController : MonoBehaviour
     private InteractableObject _currentInteractable;
     private Vector3 _interactableObjectRotation;
 
+    public LayerMask ignoreTriggerLayer;
+
     private bool _doRaycast = true;
 
     // Start is called before the first frame update
@@ -55,7 +57,7 @@ public class PlayerGazeController : MonoBehaviour
         Vector3 origin = mainCamera.transform.position;
         RaycastHit hit;
 
-        if (Physics.Raycast(origin, forward, out hit, maxDistance) && hit.collider.gameObject.GetComponent<InteractableObject>() != null)
+        if (Physics.Raycast(origin, forward, out hit, maxDistance, ~ignoreTriggerLayer) && hit.collider.gameObject.GetComponent<InteractableObject>())
         {
             InteractableObject hitInteractable = hit.collider.gameObject.GetComponent<InteractableObject>();
 
@@ -64,6 +66,8 @@ public class PlayerGazeController : MonoBehaviour
             actionLabel.text = hitInteractable.GetInteractionName();
             _currentInteractable = hitInteractable;
             _interactableObjectRotation = hit.collider.transform.rotation.eulerAngles;
+
+            Debug.DrawRay(origin, forward * hit.distance, Color.green);
         }
         else
         {
@@ -74,6 +78,8 @@ public class PlayerGazeController : MonoBehaviour
             }
             _currentInteractable = null;
             _interactableObjectRotation = Vector3.zero;
+
+            Debug.DrawRay(origin, forward * maxDistance, Color.red);
         }
     }
 
@@ -85,6 +91,7 @@ public class PlayerGazeController : MonoBehaviour
         if (_interact.triggered && _currentInteractable)
         {
             _currentInteractable.TriggerAction();
+            actionLabel.text = _currentInteractable.GetInteractionName();
         }
     }
 

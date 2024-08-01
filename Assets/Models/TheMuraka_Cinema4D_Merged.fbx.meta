@@ -112,6 +112,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: DR_cooktop
+    second: {fileID: 2100000, guid: d6702963970a5e44ca6999d36a29e7ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: DR_outer_wall
     second: {fileID: 2100000, guid: a77de9c520300db45b0f4ca85f370bae, type: 2}
   - first:
@@ -134,6 +139,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: HW_door_frame
     second: {fileID: 2100000, guid: f405e284dfca4a141ad2003dd9dc7be1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HW_top_window_frame
+    second: {fileID: 2100000, guid: 28198a6250e06b149ae104a65fc3480f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -179,11 +189,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: LR_sessel1
     second: {fileID: 2100000, guid: ebb916595d8196a45bb613a753823763, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LR_sessel2
-    second: {fileID: 2100000, guid: 61a42971ee85e114a9199a6bf7b7a238, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

@@ -31,4 +31,9 @@ public class PickUpObject : InteractableObject
             _playerThrowController.SetProjectileFromPrefab(objectToThrow, rotation, gameObject);
         }
     }
+
+    public override string GetInteractionName()
+    {
+         return "Pick Up " + objectName;
+    }
 }

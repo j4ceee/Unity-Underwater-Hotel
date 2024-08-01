@@ -148,4 +148,9 @@ public class WeatherController : MonoBehaviour
         }
         StartCoroutine(ChangeWeatherGradually(newWeather));
     }
+
+    public bool CheckIfChangingWeather()
+    {
+        return _isChangingWeather;
+    }
 }

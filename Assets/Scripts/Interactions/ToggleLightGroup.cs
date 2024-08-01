@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ToggleLightGroup : InteractableObject
 {
-    public GameObject lightGroup;
+    public GameObject[] lightGroups;
     private InteriorLightController _interiorLightController;
 
     void Start()
@@ -14,7 +14,15 @@ public class ToggleLightGroup : InteractableObject
 
     public override void TriggerAction()
     {
-        if (!_interiorLightController || !lightGroup) return;
-        _interiorLightController.ToggleSpecificLightGroup(lightGroup);
+        if (!_interiorLightController || lightGroups.Length == 0) return;
+        foreach (GameObject lightGroup in lightGroups)
+        {
+            _interiorLightController.ToggleSpecificLightGroup(lightGroup);
+        }
+    }
+
+    public override string GetInteractionName()
+    {
+        return "Toggle " + objectName;
     }
 }
