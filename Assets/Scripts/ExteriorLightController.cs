@@ -19,16 +19,16 @@ public class ExteriorLightController : MonoBehaviour
     public Color purpleColour = new(0.522f, 0.404f, 1f);
     public Color redColour = new(0.678f, 0.078f, 0.455f);
 
-    public LightColourMode lightColourMode = LightColourMode.GreenBlue;
+    private LightColourMode _lightColourMode = LightColourMode.GreenBlue;
 
     private bool _isNight = false;
 
-    [Tooltip("Time in seconds between color changes")]
+    [Tooltip("Longest Time in seconds between color changes (shortest is half of this)")]
     public float cycleTime = 10f;
 
     public void Start()
     {
-        SwitchToNightSetting(false);
+        CheckIfNight(0.5f);
     }
 
     private Dictionary<int, Coroutine> _lightCoroutines = new Dictionary<int, Coroutine>();
@@ -51,8 +51,12 @@ public class ExteriorLightController : MonoBehaviour
         _lightCoroutines.Remove(lightInt);
     }
 
-    public void SwitchToNightSetting(bool isNight)
+    public void CheckIfNight(float dayTime)
     {
+        var isNight = dayTime is >= .73f or <= .3f;
+
+        if (_isNight == isNight) return;
+
         _isNight = isNight;
 
         if (isNight)
@@ -73,7 +77,7 @@ public class ExteriorLightController : MonoBehaviour
 
     public void SetLightColourMode(LightColourMode mode)
     {
-        lightColourMode = mode;
+        _lightColourMode = mode;
     }
 
     void Update()
@@ -83,7 +87,7 @@ public class ExteriorLightController : MonoBehaviour
             var lightInt = UnityEngine.Random.Range(0, exteriorLights.Length);
 
             Color targetColour;
-            if (lightColourMode == LightColourMode.GreenBlue)
+            if (_lightColourMode == LightColourMode.GreenBlue)
             {
                 targetColour = UnityEngine.Random.value > 0.5f ? greenColour : blueColour;
             }
@@ -92,9 +96,11 @@ public class ExteriorLightController : MonoBehaviour
                 targetColour = UnityEngine.Random.value > 0.5f ? purpleColour : redColour;
             }
 
+            var varDuration = UnityEngine.Random.Range(0.5f*cycleTime, cycleTime);
+
             if (!_lightCoroutines.ContainsKey(lightInt))
             {
-                _lightCoroutines[lightInt] = StartCoroutine(LerpColour(lightInt, targetColour, cycleTime));
+                _lightCoroutines[lightInt] = StartCoroutine(LerpColour(lightInt, targetColour, varDuration));
             }
         }
     }

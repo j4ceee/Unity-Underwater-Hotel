@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 3904.0962, g: 6285.3955, b: 9776.001, a: 1}
+  m_IndirectSpecularColor: {r: 3904.8481, g: 6286.466, b: 9777.821, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1655,7 +1655,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98564568}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -1872,7 +1872,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100956832}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -2917,7 +2917,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126281184}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -3821,10 +3821,18 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 190563867}
+    - targetCorrespondingSourceObject: {fileID: 3770177577970419820, guid: 9465afe653d9534438305a67c7b69cc6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1737132959}
     - targetCorrespondingSourceObject: {fileID: -1134145968599238246, guid: 9465afe653d9534438305a67c7b69cc6,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 762239224}
+    - targetCorrespondingSourceObject: {fileID: -1134145968599238246, guid: 9465afe653d9534438305a67c7b69cc6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 762239228}
     - targetCorrespondingSourceObject: {fileID: -6583861947553281912, guid: 9465afe653d9534438305a67c7b69cc6,
         type: 3}
       insertIndex: -1
@@ -8756,7 +8764,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390734162}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -19388,6 +19396,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.074, y: 0.005, z: 0.074}
   m_Center: {x: 1.26955515e-26, y: 0.00767399, z: 1.4599884e-25}
+--- !u!114 &762239228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190563861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7e07e751a10c84f8b4f232f2d64cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: 
+  exteriorLightController: {fileID: 1446311824}
+  lightColourMode: 1
 --- !u!1 &767173566
 GameObject:
   m_ObjectHideFlags: 0
@@ -20944,7 +20967,7 @@ RectTransform:
   m_Father: {fileID: 1887657870}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.366, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -21153,7 +21176,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844761441}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
@@ -22959,7 +22982,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893826406}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -25203,7 +25226,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969360355}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -28812,7 +28835,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109018842}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -32192,7 +32215,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291390273}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -32526,7 +32549,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311506061}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -35219,7 +35242,6 @@ MonoBehaviour:
   blueColour: {r: 0.294, g: 0.631, b: 0.906, a: 1}
   purpleColour: {r: 0.522, g: 0.404, b: 1, a: 1}
   redColour: {r: 0.678, g: 0.078, b: 0.455, a: 1}
-  lightColourMode: 0
   cycleTime: 10
 --- !u!4 &1446311825
 Transform:
@@ -40946,6 +40968,21 @@ MonoBehaviour:
   doSnow: 1
   doTerrainBlend: 1
   normalFromObject: {fileID: 0}
+--- !u!114 &1737132959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190563862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7e07e751a10c84f8b4f232f2d64cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: 
+  exteriorLightController: {fileID: 1446311824}
+  lightColourMode: 0
 --- !u!1001 &1738051821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44641,7 +44678,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941979693}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -45219,7 +45256,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!1 &1970615716 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8081000916794937999, guid: 41c6e8800936bec479e8bd71e3570a6f,
@@ -47763,8 +47800,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 421641963}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.366, y: 0}
-  m_AnchorMax: {x: 0.366, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

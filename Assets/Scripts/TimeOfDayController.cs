@@ -37,7 +37,7 @@ namespace Scripts
 
         public Slider timeSlider;
 
-        private bool _cycleDayTime = false;
+        private bool _cycleDayTime = true;
 
         private float _cycleSpeed = 0.05f;
 
@@ -61,6 +61,7 @@ namespace Scripts
             }
 
             interiorLightController.LightIntensityOverDay(progress);
+            exteriorLightController.CheckIfNight(progress);
 
             //UpdateTimeLabel(progress);
 
@@ -86,7 +87,6 @@ namespace Scripts
                 moonLight.shadows = LightShadows.Soft;
 
                 oceanRenderer._primaryLight = moonLight;
-                exteriorLightController.SwitchToNightSetting(true);
             }
             else
             {
@@ -94,7 +94,6 @@ namespace Scripts
                 moonLight.shadows = LightShadows.None;
 
                 oceanRenderer._primaryLight = sunLight;
-                exteriorLightController.SwitchToNightSetting(false);
             }
         }
 
@@ -130,6 +129,11 @@ namespace Scripts
             timeSlider.value = currentTime;
 
             UpdateDayTime(currentTime);
+        }
+
+        private void Start()
+        {
+            UpdateDayTime(_currentTime);
         }
     }
 }
