@@ -32,6 +32,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: SW_door_key_hole
+    second: {fileID: 2100000, guid: d0eedd78764d15347adb6b660560fcb6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: glass
     second: {fileID: 2100000, guid: ce63aecf95a2bca41ae783d593315e8b, type: 2}
   materials:

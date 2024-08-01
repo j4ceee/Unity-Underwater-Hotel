@@ -227,6 +227,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: SW_elev_button
+    second: {fileID: 2100000, guid: 77b7dc4d0d2a9724193ea3d769261c2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: SW_elevator_wall
     second: {fileID: 2100000, guid: aebfe05c0bf25f34db0c51d3ffc6e469, type: 2}
   - first:
