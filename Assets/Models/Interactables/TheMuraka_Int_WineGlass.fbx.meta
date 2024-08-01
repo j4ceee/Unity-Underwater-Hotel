@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: glass
-    second: {fileID: 2100000, guid: ce63aecf95a2bca41ae783d593315e8b, type: 2}
+      name: drink_glass
+    second: {fileID: 2100000, guid: 5a108369f1841e2468fb81999dc86b17, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1

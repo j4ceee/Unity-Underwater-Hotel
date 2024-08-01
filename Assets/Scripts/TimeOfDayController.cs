@@ -16,6 +16,7 @@ namespace Scripts
         public WaterController oceanController;
 
         public InteriorLightController interiorLightController;
+        public ExteriorLightController exteriorLightController;
 
         public const float SunHigh = .5f;
         public const float MoonHighStart = 0f;
@@ -85,6 +86,7 @@ namespace Scripts
                 moonLight.shadows = LightShadows.Soft;
 
                 oceanRenderer._primaryLight = moonLight;
+                exteriorLightController.SwitchToNightSetting(true);
             }
             else
             {
@@ -92,6 +94,7 @@ namespace Scripts
                 moonLight.shadows = LightShadows.None;
 
                 oceanRenderer._primaryLight = sunLight;
+                exteriorLightController.SwitchToNightSetting(false);
             }
         }
 
