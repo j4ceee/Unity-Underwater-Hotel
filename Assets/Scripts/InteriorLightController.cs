@@ -54,6 +54,19 @@ public class InteriorLightController : MonoBehaviour
             foreach (LightGroup lightGroup in lightRoom.lightGroups)
             {
                 lightGroup.lightGroup.SetActive(lightRoom.isOn);
+
+                // set the emissive material intensity
+                if (lightGroup.emissiveObjects.Length > 0)
+                {
+                    // foreach child object of the light group
+                    foreach (GameObject emissiveObject in lightGroup.emissiveObjects)
+                    {
+                        if (emissiveObject)
+                        {
+                            ToggleEmissiveMaterialIntensity(emissiveObject, lightRoom.isOn);
+                        }
+                    }
+                }
             }
         }
 

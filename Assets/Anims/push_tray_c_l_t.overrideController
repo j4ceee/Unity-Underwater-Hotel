@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: push_tray_c_l_t
+  m_Controller: {fileID: 9100000, guid: 25702bd7f942058478c3f7272a558a59, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 6825a484eb043ec4490edbd6833b7263, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6825a484eb043ec4490edbd6833b7263, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 79fcc243ef735b244918e42d1128d43d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 79fcc243ef735b244918e42d1128d43d, type: 2}
