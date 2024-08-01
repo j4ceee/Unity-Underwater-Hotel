@@ -16,6 +16,7 @@ namespace Scripts
         public WaterController oceanController;
 
         public InteriorLightController interiorLightController;
+        public ExteriorLightController exteriorLightController;
 
         public const float SunHigh = .5f;
         public const float MoonHighStart = 0f;
@@ -36,7 +37,7 @@ namespace Scripts
 
         public Slider timeSlider;
 
-        private bool _cycleDayTime = false;
+        private bool _cycleDayTime = true;
 
         private float _cycleSpeed = 0.05f;
 
@@ -60,6 +61,7 @@ namespace Scripts
             }
 
             interiorLightController.LightIntensityOverDay(progress);
+            exteriorLightController.CheckIfNight(progress);
 
             //UpdateTimeLabel(progress);
 
@@ -127,6 +129,11 @@ namespace Scripts
             timeSlider.value = currentTime;
 
             UpdateDayTime(currentTime);
+        }
+
+        private void Start()
+        {
+            UpdateDayTime(_currentTime);
         }
     }
 }
